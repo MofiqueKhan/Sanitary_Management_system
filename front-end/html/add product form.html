@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/product.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Product Order Form</h1>
+      <form id="submit-form">
+        <label for="product">Product:</label>
+        <select id="product" name="product">
+          <option value="product1">Product 1</option>
+          <option value="product2">Product 2</option>
+          <option value="product3">Product 3</option>
+        </select>
+
+        <label for="class">Class:</label>
+        <select id="class" name="classType">
+          <option value="class1">Class1</option>
+          <option value="class2">Class2</option>
+          <option value="class3">Class3</option>
+        </select>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="productQuantity" min="1" max="10" />
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="productName" />
+
+        <label for="Category">Category:</label>
+        <input type="text" id="Category" name="categoryName" />
+
+        <label for="upload-file">Choose a file:</label>
+        <input
+          class="file"
+          type="file"
+          id="upload-file"
+          name="imageBlob"
+          accesskey="1"
+          accept=".png,.jpg,.jpeg"
+          min="1"
+          max="1"
+        />
+        <button type="submit">Submit Order</button>
+      </form>
+    </div>
+  </body>
+  <script src="../js/addProduct.js"></script>
+</html>

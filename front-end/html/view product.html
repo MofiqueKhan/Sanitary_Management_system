@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/view product.css">
+  <style>
+    span {
+      display: flex;
+      float: right;
+      cursor: pointer;
+      box-shadow: #427491 0px 1px 2px 2px;
+      border-radius: 6rem;
+      font-size: 20px; 
+    }
+
+    span:hover {
+      display: flex;
+      float: right;
+      cursor: pointer;
+      border-radius: 6rem;
+      font-size: 1.5rem; 
+      background-color: rgb(136, 182, 190);
+      color:  darkred;
+      box-shadow: #032431 0px 1px 6px 2px;
+
+    }
+
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .popup-content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      width: 400px;
+      max-width: 100%;
+      text-align: center;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    td {
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    textarea {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+
+    button[type="submit"] {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      /* display: flex; */
+      float: right;
+      /* margin-left: 15rem; */
+      /* margin-top: 50px; */
+    }
+
+    button[type="submit"]:hover {
+      background-color: #0862c9;
+      font-size: 0.9rem;
+    }
+
+
+    .close-btn {
+      background-color: #dc3545;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      float: left;
+    }
+
+    .close-btn:hover {
+      background-color: #dc3545;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      float: left;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sort-by">
+    <label class="lbl" for="sort-select">Sort by :</label>
+    <select id="sort-select">
+      <option value="name-asc">Name (A-Z)</option>
+      <option value="name-desc">Name (Z-A)</option>
+      <option value="code-asc">Code (Low-High)</option>
+      <option value="code-desc">Code (High-Low)</option>
+      <option value="category-asc">Category (A-Z)</option>
+      <option value="category-desc">Category (Z-A)</option>
+    </select>
+  </div>
+  <div>
+    <table id="product-table"></table>
+  </div>
+
+
+  <div class="buttons">
+    <form action="../html/products.html">
+      <input type="submit" value="Previous">
+    </form>
+    <div id="popup_table">
+      <div class="popup">
+        <div class="popup-content">
+          <span onclick="closeTable()">&times;</span>
+
+          <h2>Add Product</h2>
+          <form>
+            <table>
+              <tr>
+                <td><label for="product-name">Product Name:</label></td>
+                <td><input type="text" id="product-name" name="product-name"></td>
+              </tr>
+              <tr>
+                <td><label for="product-price">Price:</label></td>
+                <td><input type="number" id="product-price" name="product-price"></td>
+              </tr>
+              <tr>
+                <td><label for="product-quantity">Quantity:</label></td>
+                <td><input type="number" id="product-quantity" name="product-quantity"></td>
+              </tr>
+              <tr>
+                <td><label for="product-description">Description:</label></td>
+                <td><textarea id="product-description" name="product-description"></textarea></td>
+              </tr>
+            </table>
+            <button type="submit">Add Product</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <input id="btn" class="btn" type="submit" value="Add Billing" onclick="popupFortable()">
+
+    <form action="../html/product_display.html">
+      <input type="submit" value="Complete Billing">
+    </form>
+  </div>
+  </form>
+</body>
+
+<script src="../js/viewProducts.js"></script>
+
+</script>
+
+</html>
